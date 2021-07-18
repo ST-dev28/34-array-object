@@ -73,19 +73,17 @@ class Person {
     totalSpentForCars() {
         //console.log(this.data.cars[0].price);
         //console.log(this.data.cars.currency);
-        let totalCarPrice = 0;
-        for (let i = 0; i < this.data.cars.length; i++) {
-            const carList = this.data.cars[i];
-            //console.log(carList.price);
-            if (carList.currency === 'Euros') {
-                console.log(carList.price);
-            } else if (carList.currency === 'Litas') {
-                const convert = (carList.price / 3.45).toFixed(2);
-                console.log(convert);
+        let totalCarsCost = 0;
+        const cars = this.data.cars;
+
+        for (let car of cars) {
+            if (car.currency === 'Litas') {
+                totalCarsCost += car.price / 3.45;
+            } else {
+                totalCarsCost += car.price;
             }
-            //totalCarPrice = convert + carList.price;
-        console.log(`${this.data.firstname} has spent ${totalCarPrice} for his cars.`);
         }
+        console.log(`${this.data.firstname} has spent ${totalCarsCost.toFixed(2)} Euros for his cars.`);
     }
 
     totalSpentForApartments() {
@@ -93,7 +91,9 @@ class Person {
     }
 
     totalSpendings() {
-        
+        const totalCost = this.totalSpentForCars() + this.data.address.price;
+        console.log(totalCost);
+        console.log(`${this.data.firstname} has spent ${totalCost} Euros totally.`); 
     }
 }
 
