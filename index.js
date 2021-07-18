@@ -14,7 +14,7 @@ jonas.firstChild();
 
 jonas.lastChild();
 // Alfas Marsietis (50)
-/*
+
 jonas.firstCar();
 // Audi 80 (red)
 
@@ -57,7 +57,7 @@ jonas.totalSpentForCars();
 
 jonas.totalSpentForApartments();
 // Jonas has spent 500000 Euros for his apartments.
-
+/*
 jonas.totalSpendings();
 // Jonas has spent 601739.13 Euros tottaly.
 */

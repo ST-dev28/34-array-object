@@ -17,10 +17,83 @@ class Person {
         console.log(`${childFirst.firstname} (${childFirst.age}) `);
     }
     lastChild() {
-        //const childLast = ;
-        console.log(this.data.children.length);
-        //console.log(`${childLast.firstname} (${childLast.age}) `);
+        //console.log(this.data.children.length);
+        const childLast = this.data.children[this.data.children.length-1];
+        console.log(`${childLast.firstname} ${childLast.lastname} (${childLast.age}) `);
+    }
 
+    firstCar() {
+        const carFirst = this.data.cars[0];
+        //console.log(this.data.cars[0]);
+        console.log(`${carFirst.brand} ${carFirst.model} (${carFirst.color} )`);
+    }
+
+    lastCar() {
+         //console.log(this.data.cars.length);
+         const carLast = this.data.cars[this.data.cars.length-1];
+         console.log(`${carLast.brand} ${carLast.model} (${carLast.color}) `);
+    }
+
+    apartmentPrice() {
+        console.log(`${this.data.firstname} has an apartment for ${this.data.address.price} ${this.data.address.currency} `);
+    }
+
+    chidren() {
+    console.log(`This is a chidren of ${this.data.firstname} ${this.data.lastname}:`);
+        for (let i = 0; i < this.data.children.length; i++) {
+            const childList = this.data.children[i];
+            console.log(`${i+1}. ${childList.firstname} ${childList.lastname} (${childList.age})`)
+            }
+        }
+        aliveChildren() {
+            let count = 0;
+        for (let i = 0; i < this.data.children.length; i++) {
+            const childAlive = this.data.children[i];
+            if (childAlive.alive === true) {
+                count++;
+            }
+        }
+        console.log(`${this.data.firstname} ${this.data.lastname} has only ${count} children alive`);
+    }
+
+    autopark() {
+        console.log(`This is ${this.data.firstname} cars:`);
+        for (let i = 0; i < this.data.cars.length; i++) {
+            const carList = this.data.cars[i];
+            console.log(`${i+1}. ${carList.brand} ${carList.model} (${carList.color})`)
+        }
+    }
+    wherePersonLive() {
+        console.log(`${this.data.firstname} is living at ${this.data.address.city} ${this.data.address.street} ${this.data.address.houseNumber} `);
+    }
+    carPrice(index) {
+        console.log(`${this.data.cars[index].brand} ${this.data.cars[index].model} is purchased for ${this.data.cars[index].price} ${this.data.cars[index].currency}.`);
+    }
+
+    totalSpentForCars() {
+        //console.log(this.data.cars[0].price);
+        //console.log(this.data.cars.currency);
+        let totalCarPrice = 0;
+        for (let i = 0; i < this.data.cars.length; i++) {
+            const carList = this.data.cars[i];
+            //console.log(carList.price);
+            if (carList.currency === 'Euros') {
+                console.log(carList.price);
+            } else if (carList.currency === 'Litas') {
+                const convert = (carList.price / 3.45).toFixed(2);
+                console.log(convert);
+            }
+            //totalCarPrice = convert + carList.price;
+        console.log(`${this.data.firstname} has spent ${totalCarPrice} for his cars.`);
+        }
+    }
+
+    totalSpentForApartments() {
+        console.log(`${this.data.firstname} has spent ${this.data.address.price} ${this.data.address.currency} for his apartments.`); 
+    }
+
+    totalSpendings() {
+        
     }
 }
 
