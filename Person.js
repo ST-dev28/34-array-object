@@ -83,6 +83,8 @@ class Person {
                 totalCarsCost += car.price;
             }
         }
+        this.totalCarscost = totalCarsCost;
+        //console.log(this.totalCarscost);
         console.log(`${this.data.firstname} has spent ${totalCarsCost.toFixed(2)} Euros for his cars.`);
     }
 
@@ -91,9 +93,9 @@ class Person {
     }
 
     totalSpendings() {
-        const totalCost = this.totalSpentForCars() + this.data.address.price;
-        console.log(totalCost);
-        console.log(`${this.data.firstname} has spent ${totalCost} Euros totally.`); 
+        const totalCost = this.totalCarscost + this.data.address.price;
+        //console.log(totalCost);
+        console.log(`${this.data.firstname} has spent ${totalCost.toFixed(2)} Euros totally.`); 
     }
 }
 
