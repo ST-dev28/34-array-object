@@ -1,5 +1,6 @@
 const data = require('./data');
-const Person = require('./Person');
+//const Person = require('./Person');
+const Person = require('./Person1');
 
 const jonas = new Person(data);
 
